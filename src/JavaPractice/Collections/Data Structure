@@ -1,0 +1,116 @@
+Java Data Structures
+Data structures are techniques for storing and organizing data efficiently. They allow you to manage information in ways that make access, updates, and searches faster and more convenient.
+An array is the simplest example: it lets you store multiple elements in a single variable. But Java goes far beyond arrays, offering powerful data structures in the java.util package. Each serves a different purpose depending on how you want to handle data.
+Think of data structures as arrays on steroids—more flexible, feature-rich, and tailored for specific needs.
+
+🔹 ArrayList
+- A resizable array that grows as needed.
+- Stores elements and lets you access them by index.
+import java.util.ArrayList;
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<String> cars = new ArrayList<>();
+    cars.add("Volvo");
+    cars.add("BMW");
+    cars.add("Ford");
+    cars.add("Mazda");
+    System.out.println(cars);
+  }
+}
+
+
+
+🔹 HashSet
+- A collection of unique elements—duplicates are not allowed.
+- Great for fast membership checks.
+import java.util.HashSet;
+
+public class Main {
+  public static void main(String[] args) {
+    HashSet<String> cars = new HashSet<>();
+    cars.add("Volvo");
+    cars.add("BMW");
+    cars.add("Ford");
+    cars.add("BMW"); // Duplicate
+    cars.add("Mazda");
+    System.out.println(cars);
+  }
+}
+
+
+👉 Notice that "BMW" only appears once because sets enforce uniqueness.
+
+🔹 HashMap
+- Stores key-value pairs.
+- Perfect when you want to look up values by a unique key (like an ID or name).
+import java.util.HashMap;
+
+public class Main {
+  public static void main(String[] args) {
+    HashMap<String, String> capitalCities = new HashMap<>();
+    capitalCities.put("England", "London");
+    capitalCities.put("Germany", "Berlin");
+    capitalCities.put("Norway", "Oslo");
+    capitalCities.put("USA", "Washington DC");
+    System.out.println(capitalCities);
+  }
+}
+
+
+
+
+
+
+🔹 Iterators
+An iterator is a tool for looping through elements in a data structure. “Iterating” simply means going through items one by one.
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<String> cars = new ArrayList<>();
+    cars.add("Volvo");
+    cars.add("BMW");
+    cars.add("Ford");
+    cars.add("Mazda");
+
+    Iterator<String> it = cars.iterator();
+    while(it.hasNext()) {
+      System.out.println(it.next());
+    }
+  }
+}
+
+
+
+
+Java collections
+
+
+ Java Collections Framework
+Before diving deeper into ArrayList, HashSet, HashMap, and other data structures, it’s important to understand the bigger picture: the Java Collections Framework (JCF).
+The JCF provides:
+- Interfaces (like List, Set, and Map) that define behavior.
+- Classes (like ArrayList, HashSet, HashMap) that implement those interfaces.
+All of these are part of the java.util package, offering standardized ways to store, search, sort, and organize data.
+👉 Think of the Collections Framework as a toolbox:
+- Interfaces are the blueprint of tools.
+- Classes are the actual tools you use.
+
+Core Interfaces and Their Implementations
+Interface	 	Common Classes				Description
+List			ArrayList, LinkedList		Maintains order and allows duplicate elements
+Set	HashSet, 	TreeSet, LinkedHashSet		Stores only unique elements
+Map	HashMap, 	TreeMap, LinkedHashMap		Stores data as key-value pairs with unique keys
+
+
+
+🧩 When to Use What
+- List → When order matters, duplicates are allowed, and you need index-based access.
+- Set → When you need uniqueness and don’t care about duplicates.
+- Map → When you need to store and retrieve values by a key (like a dictionary or phonebook).
+
+
+
+
